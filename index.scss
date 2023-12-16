@@ -53,16 +53,35 @@ h1, h2 {
         width: 40px;
         height: 60px;
         position: relative;
+        cursor: pointer;
         &::after {
             content: "";
             position: absolute;
             top: 20%;
+            opacity: 0.8;
             left: 50%;
-            transform: translate(-50%, -20%);
+            transform: translateX(-50%);
             background-color: #D8D8D8;
             width: 10px;
             height: 10px;
             border-radius: 50%;
         }
+        &:hover {
+            &::after {
+                animation: fadein 1s alternate;
+            }
+        }
+    }
+}
+
+@keyframes fadein {
+    from {
+        top: 20%;
+        opacity: 0.8;
+    }
+    to {
+        top: 70%;
+        opacity: 0;
+        animation-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
     }
 }
