@@ -7,34 +7,66 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    background-color: #323232;
+    background-color: #666666;
 }
 
-.section-1,
-.section-2 {
+.section {
     height: 100vh;
-}
-
-.section-1 {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
     padding: 40px;
-    background-color: #323232;
-}
-.section-2 {
-    display: flex;
-    justify-content: center;
-    padding: 40px;
-    background-color: #6C6C6C;
+    &--first {
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #666666;
+    }
+    &--second {
+        justify-content: center;
+        background-color: #6C6C6C;
+    }
 }
 
 h1, h2 {
     color: #F1F1F1;
     font-weight: 300;
     font-size: 2rem;
+    text-align: center;
+}
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    bottom: 5%;
+    right: 5%;
+    border: 4px solid #E2C0B9;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 10px;
+    &__btn {
+        display: block;
+        position: relative;
+        top: 2px;
+        border: solid #E2C0B9;
+        border-width: 0 4px 4px 0;
+        padding: 4px;
+        transform: rotate(-135deg);
+    }
+    &:hover {
+        border-color: #9D2E1A;
+        .back-to-top__btn {
+            border-color: #9D2E1A;
+        }
+    }
+}
+
+.show {
+    display: block !important;
 }
 
 .animated-scroll {
@@ -42,6 +74,7 @@ h1, h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-decoration: none;
     &__text {
         margin-bottom: 10px;
         font-style: italic;
